@@ -1,0 +1,4 @@
+Individual videos to be placed side by side are compressed with the following command.
+```console
+ffmpeg -i input.mp4 -an -c:v libx264 -crf 28 -preset veryslow -y output.mp4
+```
