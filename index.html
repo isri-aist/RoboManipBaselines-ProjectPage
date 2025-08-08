@@ -1,408 +1,324 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="RoboManipBaselines">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RoboManipBaselines</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="RoboManipBaselines">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoboManipBaselines</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+      function gtag() {
+          dataLayer.push(arguments);
+      }
 
-    gtag('js', new Date());
+      gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+      gtag('config', 'G-PYVRSFMDRL');
+    </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./media/images/favicon.jpeg">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./media/images/favicon.jpeg">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
-<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">RoboManipBaselines</h1>
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/isri-aist/RoboManipBaselines"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">RoboManipBaselines</h1>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://github.com/isri-aist/RoboManipBaselines"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
                   </span>
-                  <span>Code</span>
-                </a>
-              </span>
-              <!-- Data Link. -->
-              <span class="link-block">
-                <a href="https://huggingface.co/RoboManipBaselines"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    🤗
+                  <span class="link-block">
+                    <a href="https://huggingface.co/RoboManipBaselines"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        🤗
+                      </span>
+                      <span>Data</span>
+                    </a>
                   </span>
-                  <span>Data</span>
-                </a>
-              </span>
-              <!-- Slide Link. -->
-              <span class="link-block">
-                <a href="https://www.dropbox.com/scl/fi/a7nscrh7j3ouzwwhotx9w/RoboManipBaselines-Benchmark-en-20250129.pptx?rlkey=clhl4k13q2iiltlg6v34z78n3&dl=1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-video"></i>
+                  <span class="link-block">
+                    <a href="https://www.dropbox.com/scl/fi/a7nscrh7j3ouzwwhotx9w/RoboManipBaselines-Benchmark-en-20250129.pptx?rlkey=clhl4k13q2iiltlg6v34z78n3&dl=1"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-video"></i>
+                      </span>
+                      <span>Slide</span>
+                    </a>
                   </span>
-                  <span>Slide</span>
-                </a>
-              </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="subtitle has-text-centered">
-        Software that integrates various imitation learning methods and benchmark task environments to provide baselines for robot manipulation
-      </h2>
-      <video id="teaser" autoplay muted controls loop playsinline height="100%" poster="./media/images/thumbnail/VideoVer200.jpg">
-        <source src="./media/movies/intro/RoboManipBaselines_VideoVer200.mp4"
-                type="video/mp4">
-      </video>
-      <video id="teaser" autoplay muted controls loop playsinline height="100%" poster="./media/images/thumbnail/VideoVer100.jpg">
-        <source src="./media/movies/intro/RoboManipBaselines_VideoVer100.mp4"
-                type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-RealUR5eFoldBlueHandkerchief_SimpleVal_ACT">
-          <video poster="" id="RealUR5eFoldBlueHandkerchief_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-            <source src="./media/movies/real/ur5e/RealUR5eFoldBlueHandkerchief_SimpleVal_20241119/default_ACT.mp4"
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="subtitle has-text-centered">
+            Software that integrates various imitation learning methods and benchmark task environments to provide baselines for robot manipulation
+          </h2>
+          <video id="teaser" autoplay muted controls loop playsinline height="100%" poster="./media/images/thumbnail/VideoVer200.jpg">
+            <source src="./media/movies/intro/RoboManipBaselines_VideoVer200.mp4"
                     type="video/mp4">
           </video>
-        </div>
-        <div class="item item-RealUR5eFoldTransparentSheet_SimpleVal_ACT">
-          <video poster="" id="RealUR5eFoldTransparentSheet_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-            <source src="./media/movies/real/ur5e/RealUR5eFoldTransparentSheet_SimpleVal_20241106/default_ACT.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-RealUR5ePickSmallSilverBag_SimpleVal_ACT">
-          <video poster="" id="RealUR5ePickSmallSilverBag_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-            <source src="./media/movies/real/ur5e/RealUR5ePickSmallSilverBag_SimpleVal_20241025/default_ACT.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-RealUR5ePutCableInsideCylinder_SimpleVal_ACT">
-          <video poster="" id="RealUR5ePutCableInsideCylinder_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-            <source src="./media/movies/real/ur5e/RealUR5ePutCableInsideCylinder_SimpleVal_20241113/default_ACT.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-RealUR5ePutLoopAroundTrafficcone_SimpleVal_DiffusionPolicy">
-          <video poster="" id="RealUR5ePutLoopAroundTrafficcone_SimpleVal_DiffusionPolicy" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-            <source src="./media/movies/real/ur5e/RealUR5ePutLoopAroundTrafficcone_SimpleVal_20241112/default_DiffusionPolicy.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-RealUR5eHookLoopOntoSilverRod_SimpleVal_ACT">
-          <video poster="" id="RealUR5eHookLoopOntoSilverRod_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-            <source src="./media/movies/real/ur5e/RealUR5eHookLoopOntoSilverRod_SimpleVal_20241127/default_ACT.mp4"
+          <video id="teaser" autoplay muted controls loop playsinline height="100%" poster="./media/images/thumbnail/VideoVer100.jpg">
+            <source src="./media/movies/intro/RoboManipBaselines_VideoVer100.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <!-- Environments for robot manipulation. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-      <h2 class="title is-3">🌍 Environments for robot manipulation</h2>
-      <!-- Environment catalog -->
-      <h3 class="title is-4">🧰 Various tasks</h3>
-        <table class="table">
-          <tr>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cable.jpg">
-                <source src="./media/movies/tasks/cable.mp4"
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-RealUR5eFoldBlueHandkerchief_SimpleVal_ACT">
+              <video poster="" id="RealUR5eFoldBlueHandkerchief_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
+                <source src="./media/movies/real/ur5e/RealUR5eFoldBlueHandkerchief_SimpleVal_20241119/default_ACT.mp4"
                         type="video/mp4">
               </video>
-              <p>Cable</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Ring.jpg">
-                <source src="./media/movies/tasks/ring.mp4"
+            </div>
+            <div class="item item-RealUR5eFoldTransparentSheet_SimpleVal_ACT">
+              <video poster="" id="RealUR5eFoldTransparentSheet_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
+                <source src="./media/movies/real/ur5e/RealUR5eFoldTransparentSheet_SimpleVal_20241106/default_ACT.mp4"
                         type="video/mp4">
               </video>
-              <p>Ring</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Particle.jpg">
-                <source src="./media/movies/tasks/particle.mp4"
+            </div>
+            <div class="item item-RealUR5ePickSmallSilverBag_SimpleVal_ACT">
+              <video poster="" id="RealUR5ePickSmallSilverBag_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
+                <source src="./media/movies/real/ur5e/RealUR5ePickSmallSilverBag_SimpleVal_20241025/default_ACT.mp4"
                         type="video/mp4">
               </video>
-              <p>Particle</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cloth.jpg">
-                <source src="./media/movies/tasks/cloth.mp4"
+            </div>
+            <div class="item item-RealUR5ePutCableInsideCylinder_SimpleVal_ACT">
+              <video poster="" id="RealUR5ePutCableInsideCylinder_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
+                <source src="./media/movies/real/ur5e/RealUR5ePutCableInsideCylinder_SimpleVal_20241113/default_ACT.mp4"
                         type="video/mp4">
               </video>
-              <p>Cloth</p>
-            </td>
-          </tr>
-        </table>
+            </div>
+            <div class="item item-RealUR5ePutLoopAroundTrafficcone_SimpleVal_DiffusionPolicy">
+              <video poster="" id="RealUR5ePutLoopAroundTrafficcone_SimpleVal_DiffusionPolicy" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
+                <source src="./media/movies/real/ur5e/RealUR5ePutLoopAroundTrafficcone_SimpleVal_20241112/default_DiffusionPolicy.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-RealUR5eHookLoopOntoSilverRod_SimpleVal_ACT">
+              <video poster="" id="RealUR5eHookLoopOntoSilverRod_SimpleVal_ACT" autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
+                <source src="./media/movies/real/ur5e/RealUR5eHookLoopOntoSilverRod_SimpleVal_20241127/default_ACT.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-      <h3 class="title is-4">🦾 Various robots</h3>
-          <table class="table">
-          <tr>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cable.jpg">
-                <source src="./media/movies/robots/ur5e.mp4"
-                        type="video/mp4">
-              </video>
-              <p>UR5e</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/xArm7.jpg">
-                <source src="./media/movies/robots/xarm7.mp4"
-                        type="video/mp4">
-              </video>
-              <p>xArm7</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/ALOHA.jpg">
-                <source src="./media/movies/robots/aloha.mp4"
-                        type="video/mp4">
-              </video>
-              <p>ALOHA</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/HSR.jpg">
-                <source src="./media/movies/robots/hsr.mp4"
-                        type="video/mp4">
-              </video>
-              <p>HSR</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/Unitree-G1.jpg">
-                <source src="./media/movies/robots/g1.mp4"
-                        type="video/mp4">
-              </video>
-              <p>Unitree G1</p>
-            </td>
-          </tr>
-        </table>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+
+        <!-- Environments -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">🌍 Environments for robot manipulation</h2>
+            <h3 class="title is-4">🧰 Various tasks</h3>
+            <table class="table">
+              <tr>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cable.jpg">
+                    <source src="./media/movies/tasks/cable.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Cable</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Ring.jpg">
+                    <source src="./media/movies/tasks/ring.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Ring</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Particle.jpg">
+                    <source src="./media/movies/tasks/particle.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Particle</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cloth.jpg">
+                    <source src="./media/movies/tasks/cloth.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Cloth</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h3 class="title is-4">🦾 Various robots</h3>
+            <table class="table">
+              <tr>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cable.jpg">
+                    <source src="./media/movies/robots/ur5e.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>UR5e</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/xArm7.jpg">
+                    <source src="./media/movies/robots/xarm7.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>xArm7</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/ALOHA.jpg">
+                    <source src="./media/movies/robots/aloha.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>ALOHA</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/HSR.jpg">
+                    <source src="./media/movies/robots/hsr.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>HSR</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/Unitree-G1.jpg">
+                    <source src="./media/movies/robots/g1.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Unitree G1</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h3 class="title is-4">🎥 Real world and various simulators</h3>
+            <table class="table">
+              <tr>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Real_UR5e.jpg">
+                    <source src="./media/movies/envs/real_ur5e.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Real UR5e</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Real_xArm7.jpg">
+                    <source src="./media/movies/envs/real_xarm7.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Real xArm7</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Isaac_Gym.jpg">
+                    <source src="./media/movies/envs/isaac.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>Isaac Gym</p>
+                </td>
+                <td>
+                  <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Ring.jpg">
+                    <source src="./media/movies/envs/mujoco.mp4"
+                            type="video/mp4">
+                  </video>
+                  <p>MuJoCo</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!--/ Environments -->
+
+        <!-- Data -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">📦 Data</h2>
+            <h3 class="title is-4">
+              <a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/dataset_list.md" target="_blank">
+                📂 Demonstration datasets
+              </a>
+            </h3>
+            <h3 class="title is-4">
+              <a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/learned_parameters.md" target="_blank">
+                🧠 Learned parameters
+              </a>
+            </h3>
+          </div>
+        </div>
+        <!--/ Data -->
+
+        <!-- Evaluation results -->
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">
+            <a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/evaluation_results.md" target="_blank">
+              📊 Evaluation results
+            </a>
+          </h2>
+        </div>
+        <!--/ Evaluation results -->
       </div>
-    </div>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-      <h3 class="title is-4">🎥 Real world and various simulators</h3>
-          <table class="table">
-          <tr>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Real_UR5e.jpg">
-                <source src="./media/movies/envs/real_ur5e.mp4"
-                        type="video/mp4">
-              </video>
-              <p>Real UR5e</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Real_xArm7.jpg">
-                <source src="./media/movies/envs/real_xarm7.mp4"
-                        type="video/mp4">
-              </video>
-              <p>Real xArm7</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Isaac_Gym.jpg">
-                <source src="./media/movies/envs/isaac.mp4"
-                        type="video/mp4">
-              </video>
-              <p>Isaac Gym</p>
-            </td>
-            <td>
-              <video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Ring.jpg">
-                <source src="./media/movies/envs/mujoco.mp4"
-                        type="video/mp4">
-              </video>
-              <p>MuJoCo</p>
-            </td>
-          </tr>
-        </table>
+    </section>
+
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">Citation</h2>
+        <p>You can cite this work with:</p>
+        <pre><code>@software{RoboManipBaselines_GitHub2024,
+            author    = {Murooka, Masaki and Motoda, Tomohiro and Nakajo, Ryoichi},
+            title     = {{RoboManipBaselines}},
+            url       = {https://github.com/isri-aist/RoboManipBaselines},
+            version   = {1.0.0},
+            year      = {2024},
+            month     = dec,
+            }</code></pre>
       </div>
-    </div>
-    <!--/ Environments for robot manipulation. -->
-
-    <!-- Data. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">📦 Data</h2> <!-- Publicly available datasets -->
-        <h3 class="title is-4">📂 Demonstration datasets</h3>
-        <h4 class="title is-5" id="Demonstrations-in-MuJoCo-environments">Demonstrations in MuJoCo environments</h4>
-        <table class="table is-bordered"  style="width:100%;">
-        <colgroup>
-        </colgroup>
-        <thead>
-        <tr class="header">
-        <th>Dataset</th><th>Environment</th><th>Operation method</th><th># Demo</th><th>Date</th><th>Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td><strong>TeleopMujocoUR5eCable_Dataset30</strong></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eCable">MujocoUR5eCable</a></td>
-        <td>3D mouse</td><td>30</td><td>06/09/2025</td>
-        <td><a href="https://www.dropbox.com/scl/fo/sykc20cnax2scom1u8sc6/AM-zLM8dAZ5h6EQ8eDXcZic?rlkey=7icbmjc6wdqnp0tngfjqlhwoh&dl=1">Download</a></td></tr>
-        <tr><td><strong>TeleopMujocoUR5eRing_Dataset30</strong></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eRing">MujocoUR5eRing</a></td>
-        <td>3D mouse</td><td>30</td><td>06/09/2025</td>
-        <td><a href="https://www.dropbox.com/scl/fo/08q60h46ylipfzoe7hoyl/ADinGfMKuz9V3Z4HUMZidws?rlkey=70s5xfwkaa14y31qa8mjvwmrz&dl=1">Download</a></td></tr>
-        <tr><td><strong>TeleopMujocoUR5eParticle_Dataset30</strong></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eParticle">MujocoUR5eParticle</a></td>
-        <td>3D mouse</td><td>30</td><td>06/09/2025</td>
-        <td><a href="https://www.dropbox.com/scl/fo/ax3fktv7eqph7cxx44bks/AE8S-Vz7l07uyNi-lZzOTlU?rlkey=b7bdr8gk2f5te3c0rn6rk51cx&dl=1">Download</a></td></tr>
-        <tr><td><strong>TeleopMujocoUR5eCloth_Dataset30</strong></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eCloth">MujocoUR5eCloth</a></td>
-        <td>3D mouse</td><td>30</td><td>06/09/2025</td>
-        <td><a href="https://www.dropbox.com/scl/fo/rn66j1k4r5g2md7xdu9ti/AB7K9VYlkZidbQtwyFy3UXk?rlkey=fqjgtogvrksdpwcm2692r55ry&dl=1">Download</a></td></tr>
-        </tbody>
-        </table>
-        <h4 class="title is-5">Demonstrations in real-world environments</h4>
-        <table class="table is-bordered"  style="width:100%;">
-        <colgroup>
-        </colgroup>
-        <thead>
-        <tr class="header">
-        <th>Dataset</th><th>Environment</th><th>Operation method</th><th># Demo</th><th>Date</th><th>Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td><strong>TeleopRealUR5eDemo_Dataset30</strong></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#RealUR5eDemo">RealUR5eDemo</a></td>
-        <td>3D mouse</td><td>30</td><td></td><td><i>Coming soon</i></td>
-        </tbody>
-        </table>
-        <h3 class="title is-4">🧠 Learned parameters</h3>
-        <h4 class="title is-5">Policies in MuJoCo environments</h4>
-        <table class="table is-bordered">
-        <colgroup>
-        </colgroup>
-        <thead>
-        <tr class="header">
-        <th>Policy</th><th>Environment</th><th>Training dataset</th><th>Date</th><th>Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td>SARNN</td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eCable">MujocoUR5eCable</a></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/dataset_list.md#Demonstrations-in-MuJoCo-environments">TeleopMujocoUR5eCable_Dataset30</a></td>
-        <td>06/09/2025</td>
-        <td><a href="https://www.dropbox.com/scl/fo/tfh7ozdjds3yzccsjpzoz/ACDbUboZfvMpg1g0nEfFG5w?rlkey=b0wdw27dcp95zw2gsbndi9uj0&dl=1">Download</a></td>
-        </tr>
-        <tr><td>ACT</td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eCable">MujocoUR5eCable</a></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/dataset_list.md#Demonstrations-in-MuJoCo-environments">TeleopMujocoUR5eCable_Dataset30</a></td>
-        <td>06/09/2025</td>
-        <td><a href="https://www.dropbox.com/scl/fo/jyrz27cd2jy8mvl8ycuy7/AN80i3Z_-0ITKptxhN160Qc?rlkey=csnob2sggx4j26c4ybfg3bjps&dl=1">Download</a></td>
-        </tr>
-        <tr><td>DiffusionPolicy</td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eCable">MujocoUR5eCable</a></td>
-        <td><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/dataset_list.md#Demonstrations-in-MuJoCo-environments">TeleopMujocoUR5eCable_Dataset30</a></td>
-        <td>06/09/2025</td>
-        <td><a href="https://www.dropbox.com/scl/fo/j1kh0hy3h59hkdpwm0136/ABNf9DHbYyIZxwV7i8xEJjc?rlkey=7gyuy39yukpsq6yix0hjunodq&dl=1">Download</a></td>
-        </tr>
-        </tbody>
-        </table>
-      </div>
-    </div>
-    <!--/ Data. -->
-
-    <!-- Evaluation results. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">📊 Evaluation results</h2>
-        <!-- Evaluation in MuJoCo environments -->
-        <table class="table is-bordered">
-        <thead>
-        <tr class="header">
-        <th><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eCableEnv">MujocoUR5eCable</a></th>
-        <th><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eRingEnv">MujocoUR5eRing</a></th>
-        <th><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eParticleEnv">MujocoUR5eParticle</a></th>
-        <th><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/environment_catalog.md#MujocoUR5eClothEnv">MujocoUR5eCloth</a></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td><img src="https://github.com/isri-aist/RoboManipBaselines/blob/images/images/eval/mujoco/ur5e/MujocoUR5eCable_EvalGraph_20241205.png?raw=true"></td>
-        <td><img src="https://github.com/isri-aist/RoboManipBaselines/blob/images/images/eval/mujoco/ur5e/MujocoUR5eRing_EvalGraph_20241205.png?raw=true"></td>
-        <td><img src="https://github.com/isri-aist/RoboManipBaselines/blob/images/images/eval/mujoco/ur5e/MujocoUR5eParticle_EvalGraph_20241205.png?raw=true"></td>
-        <td><img src="https://github.com/isri-aist/RoboManipBaselines/blob/images/images/eval/mujoco/ur5e/MujocoUR5eCloth_EvalGraph_20241205.png?raw=true"></td></tr>
-        </tbody>
-        </table>
-      </div>
-    </div>
-    <!--/ Evaluation results. -->
-  </div>
-</section>
+    </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Citation</h2>
-    <p>You can cite this work with:</p>
-    <pre><code>@software{RoboManipBaselines_GitHub2024,
-  author    = {Murooka, Masaki and Motoda, Tomohiro and Nakajo, Ryoichi},
-  title     = {{RoboManipBaselines}},
-  url       = {https://github.com/isri-aist/RoboManipBaselines},
-  version   = {1.0.0},
-  year      = {2024},
-  month     = dec,
-}</code></pre>
-  </div>
-</section>
-
-
-</body>
+  </body>
 </html>
