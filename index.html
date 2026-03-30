@@ -1,211 +1,294 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="RoboManipBaselines">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RoboManipBaselines</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoboManipBaselines</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-    <!-- Global site tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-PYVRSFMDRL');
-    </script>
+<style>
+body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,#fbfcfe,#ffffff);color:#111}
+.section{padding:2.5rem 1.5rem}
+.container{max-width:1100px;margin:auto}
+.logo{width:240px;margin:auto;display:block}
+.hero-title{font-size:3rem;font-weight:800;text-align:center;margin-top:0.8rem}
+.hero-sub{max-width:1000px;margin:1rem auto 0;text-align:center;color:#555;font-size:1.06rem;line-height:1.6}
+.buttons{display:flex;gap:0.6rem;justify-content:center;margin-top:1.2rem;flex-wrap:wrap}
+.button{width:170px;border-radius:999px;font-weight:600}
+.hero-note{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.4rem;padding:0.55rem 0.9rem;border-radius:999px;background:#fff4d6;color:#8a5a00;font-size:0.95rem;font-weight:700;border:1px solid #f1dfaa}
+.hero-subnote{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.2rem;padding:0.5rem 0.85rem;border-radius:999px;background:#f5f7fb;color:#4b5563;font-size:0.92rem;font-weight:700;border:1px solid #e5e7eb}
+.hero-media{position:relative;width:100%;aspect-ratio:16/9;background:#eef2f7;border-radius:18px;margin-top:1rem;box-shadow:0 10px 30px rgba(0,0,0,0.08);overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#eef2f7}
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./media/images/logo.png">
+.hero-subvideos{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.hero-subvideos .sub{position:relative;aspect-ratio:16/9;background:#eef2f7;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+.hero-subvideos video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){.hero-subvideos{grid-template-columns:1fr}}
+.section-title{font-size:2rem;font-weight:800;margin-bottom:0.4rem}
+.section-desc{color:#666;margin-bottom:1.2rem}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.card{padding:1.2rem;border-radius:16px;border:1px solid #eee;background:white;line-height:1.5}
+.policy-grid{display:flex;flex-wrap:wrap;gap:0.6rem}
+.policy-tag{width:160px;text-align:center;padding:0.5rem;border-radius:999px;background:#f5f7fb;border:1px solid #e5e7eb;font-weight:600}
+.carousel-wrapper{position:relative}
+.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2rem)/2.8);gap:1rem;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;align-items:start;white-space:normal}
+.carousel::-webkit-scrollbar{display:none}
+.item{scroll-snap-align:start;min-width:0;display:block;aspect-ratio:16/9;overflow:hidden;background:#eef2f7;border-radius:16px}
+.item video{display:block;width:100%;height:100%;object-fit:cover;border-radius:16px}
+.caption{text-align:center;margin-top:0.4rem;font-size:0.9rem}
+.arrow{position:absolute;top:40%;transform:translateY(-50%);background:white;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.08);z-index:3}
+.arrow:hover{background:#f0f4ff}
+.arrow.left{left:-40px}
+.arrow.right{right:-40px}
+.links{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
+.link-card{padding:1rem;border-radius:16px;border:1px solid #eee;background:white;text-decoration:none;color:#111}
+.link-card:hover{box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+.link-title{font-weight:700;margin-bottom:0.2rem}
+.link-desc{color:#666;font-size:0.9rem}
+@media (max-width:900px){.features{grid-template-columns:repeat(2,1fr)}.carousel{grid-auto-columns:calc((100% - 1rem)/2)}}
+@media (max-width:640px){.features{grid-template-columns:1fr}.carousel{grid-auto-columns:88%}.arrow.left{left:-10px}.arrow.right{right:-10px}.links{grid-template-columns:1fr}}
 
-    <style>
-      .section-title {
-          margin-bottom: 1rem;
-          border-bottom: 2px solid #ddd;
-          padding-bottom: 0.3rem;
-      }
-      .publication-links .button {
-          margin: 0.2rem;
-          transition: background-color 0.3s ease;
-      }
-      .publication-links .button:hover {
-          background-color: #363636;
-          color: #fff;
-      }
-      table.table {
-          margin: auto;
-      }
-      table.table td {
-          text-align: center;
-          vertical-align: top;
-      }
-      video {
-          border-radius: 6px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-    </style>
+/* dots */
+.dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.dot{width:8px;height:8px;border-radius:50%;background:#cbd5e1;cursor:pointer;transition:all .2s}
+.dot.active{background:#2563eb;transform:scale(1.2)}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-  </head>
-  <body>
+</style>
+</head>
 
-    <!-- Title -->
-    <section class="hero is-light">
-      <div class="hero-body">
-        <div class="container is-max-desktop has-text-centered">
-          <img src="./media/images/logo.png" alt="RoboManipBaselines Logo" style="max-width:250px; margin-bottom: 1rem;">
-          <div class="publication-links">
-            <a href="https://github.com/isri-aist/RoboManipBaselines" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fab fa-github"></i></span>
-              <span>Code</span>
-            </a>
-            <a href="https://huggingface.co/RoboManipBaselines" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">🤗</span>
-              <span>Data</span>
-            </a>
-            <a href="https://arxiv.org/abs/2509.17057" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon"><i class="fas fa-newspaper"></i></span>
-              <span>arXiv</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+<body>
 
-    <!-- Teaser -->
-    <section class="section">
-      <div class="container is-max-desktop has-text-centered">
-        <h2 class="subtitle">
-          <strong>RoboManipBaselines</strong> : Software that integrates various imitation learning methods and benchmark task environments to provide baselines for robot manipulation
-        </h2>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <video autoplay muted controls loop playsinline poster="./media/images/thumbnail/VideoVer200.jpg">
-              <source src="./media/movies/intro/RoboManipBaselines_VideoVer200.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-half">
-            <video autoplay muted controls loop playsinline poster="./media/images/thumbnail/VideoVer100.jpg">
-              <source src="./media/movies/intro/RoboManipBaselines_VideoVer100.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="section" style="padding-top:1rem;padding-bottom:0.5rem;">
+<img src="./media/images/logo.png" class="logo">
+</section>
 
-    <!-- Carousel -->
-    <section class="section is-light">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-RealUR5eFoldBlueHandkerchief_SimpleVal_ACT">
-            <video autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-              <source src="./media/movies/real/ur5e/RealUR5eFoldBlueHandkerchief_SimpleVal_20241119/default_ACT.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-RealUR5eFoldTransparentSheet_SimpleVal_ACT">
-            <video autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-              <source src="./media/movies/real/ur5e/RealUR5eFoldTransparentSheet_SimpleVal_20241106/default_ACT.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-RealUR5ePickSmallSilverBag_SimpleVal_ACT">
-            <video autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-              <source src="./media/movies/real/ur5e/RealUR5ePickSmallSilverBag_SimpleVal_20241025/default_ACT.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-RealUR5ePutCableInsideCylinder_SimpleVal_ACT">
-            <video autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-              <source src="./media/movies/real/ur5e/RealUR5ePutCableInsideCylinder_SimpleVal_20241113/default_ACT.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-RealUR5ePutLoopAroundTrafficcone_SimpleVal_DiffusionPolicy">
-            <video autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-              <source src="./media/movies/real/ur5e/RealUR5ePutLoopAroundTrafficcone_SimpleVal_20241112/default_DiffusionPolicy.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-RealUR5eHookLoopOntoSilverRod_SimpleVal_ACT">
-            <video autoplay controls muted loop playsinline style="width: auto; height: 300px; object-fit: cover;">
-              <source src="./media/movies/real/ur5e/RealUR5eHookLoopOntoSilverRod_SimpleVal_20241127/default_ACT.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="section" style="padding-top:0;">
+<div class="container">
+<h1 class="hero-title">RoboManipBaselines</h1>
+<p class="hero-sub">Build, train, and deploy robot manipulation policies across real and simulated environments</p>
 
-    <!-- Environments -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 section-title">🌍 Environments for robot manipulation</h2>
-        <h3 class="title is-4">🧰 Various tasks</h3>
-        <table class="table is-bordered is-hoverable">
-          <tr>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cable.jpg"><source src="./media/movies/tasks/cable.mp4" type="video/mp4"></video><p>Cable</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Ring.jpg"><source src="./media/movies/tasks/ring.mp4" type="video/mp4"></video><p>Ring</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Particle.jpg"><source src="./media/movies/tasks/particle.mp4" type="video/mp4"></video><p>Particle</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cloth.jpg"><source src="./media/movies/tasks/cloth.mp4" type="video/mp4"></video><p>Cloth</p></td>
-          </tr>
-        </table>
-        <h3 class="title is-4" style="margin-top:2rem;">🦾 Various robots</h3>
-        <table class="table is-bordered is-hoverable">
-          <tr>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Cable.jpg"><source src="./media/movies/robots/ur5e.mp4" type="video/mp4"></video><p>UR5e</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/xArm7.jpg"><source src="./media/movies/robots/xarm7.mp4" type="video/mp4"></video><p>xArm7</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/ALOHA.jpg"><source src="./media/movies/robots/aloha.mp4" type="video/mp4"></video><p>ALOHA</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/HSR.jpg"><source src="./media/movies/robots/hsr.mp4" type="video/mp4"></video><p>HSR</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/robots/Unitree-G1.jpg"><source src="./media/movies/robots/g1.mp4" type="video/mp4"></video><p>Unitree G1</p></td>
-          </tr>
-        </table>
-        <h3 class="title is-4" style="margin-top:2rem;">🎥 Real world and various simulators</h3>
-        <table class="table is-bordered is-hoverable">
-          <tr>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Real_UR5e.jpg"><source src="./media/movies/envs/real_ur5e.mp4" type="video/mp4"></video><p>Real UR5e</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Real_xArm7.jpg"><source src="./media/movies/envs/real_xarm7.mp4" type="video/mp4"></video><p>Real xArm7</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/real_and_sims/Isaac_Gym.jpg"><source src="./media/movies/envs/isaac.mp4" type="video/mp4"></video><p>Isaac Gym</p></td>
-            <td><video autoplay controls muted loop playsinline style="width: auto; height: 150px;" poster="./media/images/thumbnail/env/tasks/Ring.jpg"><source src="./media/movies/envs/mujoco.mp4" type="video/mp4"></video><p>MuJoCo</p></td>
-          </tr>
-        </table>
-      </div>
-    </section>
+<div class="buttons">
+<a href="https://github.com/isri-aist/RoboManipBaselines" target="_blank" rel="noopener noreferrer" class="button is-dark">💻 Code</a>
+<a href="https://arxiv.org/abs/2509.17057" target="_blank" rel="noopener noreferrer" class="button">📄 Paper</a>
+<a href="https://huggingface.co/RoboManipBaselines" target="_blank" rel="noopener noreferrer" class="button">🗂️ Datasets</a>
+</div>
 
-    <!-- Data -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 section-title">📦 Data</h2>
-        <h3 class="title is-4"><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/dataset_list.md" target="_blank">📂 Demonstration datasets</a></h3>
-        <h3 class="title is-4"><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/learned_parameters.md" target="_blank">🧠 Learned parameters</a></h3>
-      </div>
-    </section>
+<div class="hero-note">🎉 Version 3 Released</div>
+<div class="hero-media">
+<video class="hero-video" autoplay muted loop controls playsinline>
+<source src="./media/videos/hero/overview.mp4" type="video/mp4">
+</video>
+</div>
 
-    <!-- Evaluation results -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 section-title">📊 Evaluation results</h2>
-        <h3 class="title is-4"><a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/evaluation_results.md" target="_blank">📈 Benchmarked performance</a></h3>
-      </div>
-    </section>
+<div class="hero-subnote">🕰️ Old Version Videos</div>
+<div class="hero-subvideos">
+  <div class="sub">
+    <video autoplay muted loop controls playsinline>
+      <source src="./media/videos/hero/version1.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="sub">
+    <video autoplay muted loop controls playsinline>
+      <source src="./media/videos/hero/version2.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
 
-    <!-- Citation -->
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">Citation</h2>
-        <p>You can cite this work with:</p>
-        <pre><code>@article{RoboManipBaselines_Murooka_2025,
-            title={RoboManipBaselines: A Unified Framework for Imitation Learning in Robotic Manipulation across Real and Simulated Environments},
-            author={Murooka, Masaki and Motoda, Tomohiro and Nakajo, Ryoichi and Oh, Hanbit and Makihara, Koshi and Shirai, Keisuke and Domae, Yukiyasu},
-            journal={arXiv preprint arXiv:2509.17057},
-            year={2025}
-          }</code></pre>
-      </div>
-    </section>
+</div>
+</section>
 
-  </body>
+<section class="section">
+<div class="container">
+<h2 class="section-title">Core Capabilities</h2>
+<p class="section-desc">RoboManipBaselines provides a unified software foundation for imitation learning in robotic manipulation, covering the full pipeline from data collection to deployment.</p>
+
+<div class="features">
+<div class="card">⚙️ <strong>End-to-end workflow</strong><br>From demonstration data collection to policy training and rollout, all components are integrated into a single consistent pipeline.</div>
+<div class="card">🌍 <strong>Works across environments</strong><br>Supports diverse environments including multiple simulators and real robots under a unified interface.</div>
+<div class="card">🧩 <strong>Easily extensible</strong><br>New robots, tasks, and policies can be added with minimal implementation by extending base classes.</div>
+<div class="card">📊 <strong>Reproducible benchmarking</strong><br>Enables systematic comparison using shared datasets and standardized evaluation procedures.</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Policy Families</h2>
+<p class="section-desc">A unified interface supports a wide range of baseline and recent policy models.</p>
+
+<div class="policy-grid">
+<span class="policy-tag">MLP</span>
+<span class="policy-tag">ACT</span>
+<span class="policy-tag">Diffusion</span>
+<span class="policy-tag">SARNN</span>
+<span class="policy-tag">3D Diffusion</span>
+<span class="policy-tag">ManiFlow</span>
+<span class="policy-tag">Flow Policy</span>
+<span class="policy-tag">MT-ACT</span>
+<span class="policy-tag">π0</span>
+<span class="policy-tag">GR00T</span>
+</div>
+</div>
+</section>
+
+<!-- Environments -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">Environments</h2>
+<p class="section-desc">Supports diverse environments across both simulation and real-world settings.</p>
+<div class="carousel-wrapper">
+<button class="arrow left" type="button" onclick="scrollCarousel('env-carousel', -1)">◀</button>
+<div class="carousel" id="env-carousel">
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/01.mp4"></video><div class="caption">UR5e in MuJoCo</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/02.mp4"></video><div class="caption">FR3 in MuJoCo</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/03.mp4"></video><div class="caption">ALOHA in MuJoCo</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/04.mp4"></video><div class="caption">HSR in MuJoCo</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/05.mp4"></video><div class="caption">G1 in MuJoCo</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/06.mp4"></video><div class="caption">Sawyer in PyBullet</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/07.mp4"></video><div class="caption">UR5e in Isaac Gym</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/08.mp4"></video><div class="caption">UR5e real robot</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/09.mp4"></video><div class="caption">xArm7 real robot</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/10.mp4"></video><div class="caption">Parallel simulation</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/environments/11.mp4"></video><div class="caption">Tactile sensor plugin</div></div>
+</div>
+<button class="arrow right" type="button" onclick="scrollCarousel('env-carousel', 1)">▶</button>
+</div>
+<div class="dots" id="env-dots"></div>
+</div>
+</section>
+
+<!-- Benchmarks -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">Benchmarks</h2>
+<p class="section-desc">Enables systematic benchmarking with publicly available datasets.</p>
+<div class="carousel-wrapper">
+<button class="arrow left" type="button" onclick="scrollCarousel('benchmark-carousel', -1)">◀</button>
+<div class="carousel" id="benchmark-carousel">
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/benchmarks/01.mp4"></video><div class="caption">Handkerchief</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/benchmarks/02.mp4"></video><div class="caption">Sheet</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/benchmarks/04.mp4"></video><div class="caption">Bag (S)</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/benchmarks/05.mp4"></video><div class="caption">ChainInTube</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/benchmarks/06.mp4"></video><div class="caption">RingOnCone</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/benchmarks/07.mp4"></video><div class="caption">RingOnHook</div></div>
+</div>
+<button class="arrow right" type="button" onclick="scrollCarousel('benchmark-carousel', 1)">▶</button>
+</div>
+<div class="dots" id="benchmark-dots"></div>
+</div>
+</section>
+
+<!-- Applications -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">Research Applications</h2>
+<p class="section-desc">Demonstrates how the framework can be extended for diverse research applications.</p>
+<div class="carousel-wrapper">
+<button class="arrow left" type="button" onclick="scrollCarousel('app-carousel', -1)">◀</button>
+<div class="carousel" id="app-carousel">
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/applications/01.mp4"></video><div class="caption">Integration with a tactile foundation model</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/applications/02.mp4"></video><div class="caption">Interactive robotic system</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/applications/03.mp4"></video><div class="caption">3D sensing evaluation</div></div>
+<div class="item"><video autoplay controls muted loop playsinline src="./media/videos/applications/04.mp4"></video><div class="caption">Hardware extensions</div></div>
+</div>
+<button class="arrow right" type="button" onclick="scrollCarousel('app-carousel', 1)">▶</button>
+</div>
+<div class="dots" id="app-dots"></div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Resources</h2>
+<p class="section-desc">Access datasets, trained models, and evaluation results.</p>
+
+<div class="links">
+<a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/dataset_list.md" target="_blank" rel="noopener noreferrer" class="link-card"><div class="link-title">📂 Demonstration datasets</div><div class="link-desc">Datasets used for training and evaluation</div></a>
+<a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/learned_parameters.md" target="_blank" rel="noopener noreferrer" class="link-card"><div class="link-title">🧠 Learned parameters</div><div class="link-desc">Pretrained policy checkpoints</div></a>
+<a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/evaluation_results.md" target="_blank" rel="noopener noreferrer" class="link-card"><div class="link-title">📊 Evaluation results</div><div class="link-desc">Summary of evaluation experiments</div></a>
+<a href="https://github.com/isri-aist/RoboManipBaselines/blob/master/doc/evaluation_results.md" target="_blank" rel="noopener noreferrer" class="link-card"><div class="link-title">📈 Benchmarked performance</div><div class="link-desc">Detailed benchmark comparisons</div></a>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:2rem;padding-bottom:2rem;border-top:1px solid #eee;">
+<div class="container" style="text-align:center;color:#666;font-size:0.9rem;">
+<strong>RoboManipBaselines</strong><br>
+An open-source framework for imitation learning in robotic manipulation.<br>
+<a href="https://github.com/isri-aist/RoboManipBaselines" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+<a href="https://arxiv.org/abs/2509.17057" target="_blank" rel="noopener noreferrer">Paper</a>
+</div>
+</section>
+
+<script>
+function scrollCarousel(id, dir) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const item = el.querySelector('.item');
+  if (!item) return;
+  const gap = 16;
+  const width = item.offsetWidth + gap;
+  el.scrollBy({ left: dir * width, behavior: 'smooth' });
+}
+
+function initDots(carouselId, dotsId){
+  const carousel = document.getElementById(carouselId);
+  const dotsContainer = document.getElementById(dotsId);
+  if (!carousel || !dotsContainer) return;
+
+  function compute(){
+    const items = carousel.querySelectorAll('.item');
+    if (items.length === 0) return;
+
+    const item = items[0];
+    const gap = 16;
+    const itemWidth = item.getBoundingClientRect().width + gap;
+    const maxScroll = Math.max(0, carousel.scrollWidth - carousel.clientWidth);
+    const pageCount = Math.max(1, Math.round(maxScroll / itemWidth) + 1);
+
+    dotsContainer.innerHTML = '';
+
+    for(let i = 0; i < pageCount; i++){
+      const d = document.createElement('div');
+      d.className = 'dot';
+      d.onclick = () => {
+        carousel.scrollTo({ left: i * itemWidth, behavior: 'smooth' });
+      };
+      dotsContainer.appendChild(d);
+    }
+
+    update();
+  }
+
+  function update(){
+    const items = carousel.querySelectorAll('.item');
+    if (items.length === 0) return;
+
+    const gap = 16;
+    const itemWidth = items[0].getBoundingClientRect().width + gap;
+    const dots = dotsContainer.querySelectorAll('.dot');
+    const rawIndex = itemWidth > 0 ? carousel.scrollLeft / itemWidth : 0;
+    const index = Math.min(dots.length - 1, Math.round(rawIndex));
+
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+    });
+  }
+
+  carousel.addEventListener('scroll', () => {
+    window.requestAnimationFrame(update);
+  });
+
+  compute();
+  window.addEventListener('resize', compute);
+}
+
+initDots('env-carousel','env-dots');
+initDots('benchmark-carousel','benchmark-dots');
+initDots('app-carousel','app-dots');
+</script>
+
+</body>
 </html>
